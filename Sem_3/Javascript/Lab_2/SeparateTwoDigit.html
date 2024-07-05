@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        getSeparate();
+        function getSeparate() {
+            let a = prompt("Enter a Two Digit Number:");
+
+            if (a == null || a == "") {
+                alert("Enter Valid Input:");
+                return;
+            }
+            if (a < 10 || a > 99) {
+                alert("Enter Only Two Digit Number");
+                return;
+            }
+            let lastDigit = a % 10;
+            let firstDigit = Math.floor(a / 10);
+            let result = 1;
+
+            for (let i = 1; i <= lastDigit; i++) {
+                result *= firstDigit;
+            }
+            alert(`Result = ${result}`);
+        }
+    </script>
+</body>
+
+</html>

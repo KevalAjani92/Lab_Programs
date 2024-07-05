@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Type</title>
+</head>
+
+<body>
+    <input type="text" id="txtBox"/>
+    <button type="button" onclick="toggle()">Toggle Type To Date/Text</button>
+
+    <script>
+        let type = true;
+        let d=document.getElementById('txtBox');
+        function toggle() {
+            if (type) {
+                d.type = "date";
+            } else {
+                d.type = "text";
+            }
+            type = !type;
+        }
+
+    </script>
+</body>
+
+</html>

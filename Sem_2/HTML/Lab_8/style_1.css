@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+div{
+    float: left;
+}
+.page{
+    width: 100%;
+    margin-top: 10px;
+}
+.header{
+    width: 100%;
+}
+.logo{
+    width: 30%;
+}
+.nav{
+    width: 70%;
+}
+.links{
+    float: right;
+    padding: 10px;
+    margin-left: 10px;
+}
+.main{
+    width: 100%;
+}
+.image{
+    width: 100%;
+}
+.text{
+    position: absolute;
+    top: 300px;
+    left: 600px;
+    font-size: 20px;
+}
+.footer{
+    width: 100%;
+    margin-top: 5px;
+}
+.prog{
+    border: 2px solid red;
+    width: 20%;
+    color: blue;
+    height: 100px;
+    text-align: center;
+}
+#p2{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#p4{
+    margin-left: 5%;
+    margin-right: 5%;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <fieldset>
+    <form align="center">
+        <h1>Employee Registration</h1><br>
+        <h2>Personal Information</h2>
+        <table align="center" cellpadding="15">
+            <tr>
+                <td>Employee Id</td>
+                <td>:</td>
+                <td><input type="text" name="Id" placeholder="Enter Employee Id"></td>
+                <td>Employee name</td>
+                <td>:</td>
+                <td><input type="text" name="Name" placeholder="Enter Employee Name"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><input type="email" name="mail" placeholder="Enter Email"></td>
+                <td>Contact No</td>
+                <td>:</td>
+                <td><input type="text" name="mobile" pattern="[0-9]{10}" placeholder="Enter Contact No"></td>
+            </tr>
+            <tr>
+                <td>Marital Status</td>
+                <td>:</td>
+                <td><input type="radio" name="Marital Status" id=""><label for="Marital Status">Single</label>
+                    <input type="radio" name="Marital Status" id=""><label for="Marital Status">Married</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6"><h2>Education Qualification</h2></td>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td>:</td>
+                <td><input type="text" name="Education" placeholder="Enter Education Detail"></td>
+                <td>Experience</td>
+                <td>:</td>
+                <td><input type="text" name="Exp" placeholder="Enter Experience Detail"></td>
+            </tr>
+            <tr>
+                <td colspan="6"><h2>Job Details</h2></td>
+            </tr>
+            <tr>
+                <td>Designation</td>
+                <td>:</td>
+                <td><input type="text" name="Designation" placeholder="Enter Designation Detail"></td>
+                <td>Job Location</td>
+                <td>:</td>
+                <td><input type="text" name="Location" placeholder="Enter Job Location"></td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td>:</td>
+                <td><input type="text" name="Salary" placeholder="Enter Salary Details"></td>
+            </tr>
+            <tr>
+                <td colspan="6"><hr></td>
+            </tr>
+            <tr>
+                <td colspan="6"><input type="button" value="Register"></td>
+            </tr>
+        </table>
+    </form>
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern</title>
+</head>
+<body>
+    <script>
+        n=prompt("Enter n:");
+        patter1(n);
+        document.write("<br/>");document.write("<br/>");
+        patter2(n);
+        document.write("<br/>");document.write("<br/>");
+        patter3(n);
+
+        function patter1(n) {
+            for(i=1;i<=n;i++){
+                for(j=1;j<=i;j++){
+                    document.write("*");
+                }
+                document.write("<br/>");
+            }
+        }
+        function patter2(n) {
+            temp=n-1;
+            for(i=1;i<=n;i++){
+                for(j=1;j<=temp;j++){
+                    document.write("&nbsp;&nbsp;");
+                }
+                temp--;
+                for(j=1;j<=i;j++){
+                    document.write("*"); 
+                }
+                document.write("<br/>");
+            }
+        }
+        function patter3(n) {
+            temp=n-1;
+            a=1;
+            for(i=1;i<=n;i++){
+                for(j=1;j<=temp;j++){
+                    document.write("&nbsp;&nbsp;");
+                }
+                temp--;
+                for(j=1;j<=a;j++){
+                    if(j%2!=0){
+                        document.write("*");
+                    }else{
+                        document.write("&nbsp;&nbsp;");
+                    }
+                }
+                a+=2;
+                document.write("<br/>");
+            }
+        }
+    </script>
+</body>
+</html>

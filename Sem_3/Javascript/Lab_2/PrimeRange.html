@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Range</title>
+</head>
+<body>
+    <script>
+        a=prompt("Enter First Number:");
+        b=prompt("Enter Second Number:");
+
+        getPrimeRange(a,b);
+
+        function getPrimeRange(a,b) {
+            for(i=a;i<=b;i++){
+                flag=true;
+                for(j=2;j<=(i/2);j++){
+                    if(i%j==0){
+                        flag=false;
+                        break;
+                    }
+                }
+                if(flag==true && i!=1 && i!=0){
+                    document.write(`${i}`+" ");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

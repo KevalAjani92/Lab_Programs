@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+.main{
+    width: 100%;
+    height: 300px;
+    /* border: 2px solid black; */
+}
+.grd{
+    width: 30%;
+    float: left;
+    border: 2px solid black;
+    height: 100%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+#gre1{
+    background-image: linear-gradient(red,yellow);
+}
+#gre2{
+    background-image: radial-gradient(red,yellow,green);
+}

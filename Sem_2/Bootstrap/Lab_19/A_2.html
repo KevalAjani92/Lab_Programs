@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<form action="#">
+    <div class="page" style="margin-top: 50px;">
+        <div class="container-fluid border border-2 rounded border-dark w-50">
+            <div class="row mb-4">
+                <div class="col-12"><h1>COVID-19 Vaccine Registration Form</h1></div>
+            </div>
+            <div class="row fs-4 mb-4">
+                <div class="col-md-5">First Name</div>
+                <div class="col-md-5"><input class="form-control" type="text" aria-label="default input example"></div>
+            </div>
+            <div class="row fs-4 mb-4">
+                <div class="col-md-5">Last Name</div>
+                <div class="col-md-5"><input class="form-control" type="text" aria-label="default input example"></div>
+            </div>
+            <div class="row fs-4 mb-4">
+                <div class="col-md-5">Number</div>
+                <div class="col-md-5"><input class="form-control" type="text" pattern="[0-9]" aria-label="default input example"></div>
+            </div>
+            <div class="row fs-4 mb-4">
+                <div class="col-md-5">Vaccine Name</div>
+                <div class="col-md-5"><select class="form-select" aria-label="Default select example">
+                    <option selected>Please Select Vaccine Name</option>
+                    <option value="1">o-vac</option>
+                    <option value="2">c-vac</option>
+                    <option value="3">h-vac</option>
+                  </select>
+                </div>
+            </div>
+            <div class="row fs-4 mb-4">
+                <div class="col-md-5">Vaccination Center Name</div>
+                <div class="col-md-6"><select class="form-select w-100" aria-label="Default select example">
+                    <option selected>Please Select Vaccination Center Name</option>
+                    <option value="1">Rajkot</option>
+                    <option value="2">Morbi</option>
+                    <option value="3">Jamnagar</option>
+                  </select>
+                </div>
+            </div>
+            <div class="row fs-4 mb-4">
+                <div class="col-md-5">Date Of Dose</div>
+                <div class="col-md-5"><input type="date" class="form-control" name="DoseDate" id=""></div>
+            </div>
+            <div class="row fs-4 mb-4">
+                <div class="col-md-5">Dose Number</div>
+                <div class="col-md-5"><input type="number" value="0" min="0" max="2" class="form-control" name="Dose" id=""></div>
+            </div>
+            <div class="row fs-4 mb-4 mt-5 justify-content-center">
+                <div class="col-md-5"><button type="submit" class="btn btn-light">CLICK HERE</button>
+                    <button type="reset" class="btn btn-light">CANCEL</button></div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

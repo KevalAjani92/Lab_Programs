@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=prompt("Enter a String:");
+        document.write(`Result String = ${getSubString(a)}`);
+        function getSubString(a) {
+            let count=0;
+            let firstOccurance,lastOccurance;
+            for(let i=0;i<a.length;i++){
+                a=a.toLowerCase();
+                if(count==0 &&a[i]=='a'){
+                    firstOccurance=i;
+                    count++;
+                }else if(count<a.length &&a[i]=='a'){
+                    lastOccurance=i;
+                    count++;
+                }
+            }
+            return a.substring(firstOccurance+1,lastOccurance);
+        }
+    </script>
+</body>
+</html>

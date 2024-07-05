@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=q">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="display"></h1>
+
+    <script>
+        let s = document.getElementById('display');
+
+        document.addEventListener('keydown',(e) => display(e));
+        document.addEventListener('keyup',(e) => display(e));
+        
+        function display(e) {
+            s.innerText=e.key;
+        }
+    </script>
+</body>
+
+</html>

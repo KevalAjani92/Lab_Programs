@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <table border="1" cellspacing="0" bordercolor="blue" align="center">
+        <tr align="center">
+            <td>foo</td>
+            <td>bar</td>
+            <td>baz</td>
+        </tr>
+        <tr>
+            <td>
+                <table border="1" cellspacing="0" bordercolor="yellow">
+                    <tr align="center">
+                        <td>one</td>
+                        <td>two</td>
+                        <td>three</td>
+                    </tr>
+                    <tr align="center">
+                        <td>four</td>
+                        <td>five</td>
+                        <td>six</td>
+                    </tr>
+                    <tr align="center">
+                        <td>seven</td>
+                        <td>eight</td>
+                        <td>nine</td>
+                    </tr>
+                </table>
+            </td>
+            <td rowspan="2" colspan="2">
+                <table border="1" cellspacing="0" bordercolor="red" height="100px">
+                    <tr>
+                        <td>eins</td>
+                        <td>zweri</td>
+                        <td rowspan="2" width="30px" align="center">drei sechs</td>
+                    </tr>
+                    <tr>
+                        <td>vier</td>
+                        <td>funf</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">abc</td>
+        </tr>
+    </table>
+</body>
+</html>

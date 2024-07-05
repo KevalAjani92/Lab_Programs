@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordSearch</title>
+</head>
+<body>
+    <script>
+        let text=prompt("Enter a Sentence : ");
+
+        let word=prompt("Enter a Word To Search : ");
+
+        const wordArray=text.split(" ");
+
+        for(i=0;i<wordArray.length;i++){
+            if(wordArray[i]==word){
+                document.write("<h1>"+i+"</h1>");
+                
+            }
+        }
+
+    </script>
+</body>
+</html>

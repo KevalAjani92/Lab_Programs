@@ -1,0 +1,71 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculties</title>
+</head>
+
+<body>
+    <script>
+        const student=[
+            {
+                "id": 1,
+                "name": "Alice Smith",
+                "age": 15,
+                "grade": "10th",
+                "subjects": ["Math", "Science", "English"]
+            },
+            {
+                "id": 2,
+                "name": "Bob Johnson",
+                "age": 14,
+                "grade": "9th",
+                "subjects": ["History", "Math", "Art"]
+            },
+            {
+                "id": 3,
+                "name": "Charlie Brown",
+                "age": 16,
+                "grade": "11th",
+                "subjects": ["Biology", "Chemistry", "Physics"]
+            },
+            {
+                "id": 4,
+                "name": "Diana Prince",
+                "age": 17,
+                "grade": "12th",
+                "subjects": ["English", "History", "Economics"]
+            },
+            {
+                "id": 5,
+                "name": "Ethan Hunt",
+                "age": 15,
+                "grade": "10th",
+                "subjects": ["Physical Education", "Math", "Geography"]
+            }
+        ]
+
+        document.write("<table border=1>");
+        document.write("<tr>");
+        document.write("<th> ID </th>");
+        document.write("<th> Name </th>");
+        document.write("<th> Age </th>");
+        document.write("<th> Grade </th>");
+        document.write("<th> Subjects </th>");
+        document.write("</tr>");
+        for (i = 0; i < student.length; i++) {
+            document.write("<tr>");
+            document.write("<td>" + student[i].id + "</td>");
+            document.write("<td>" + student[i].name + "</td>");
+            document.write("<td>" + student[i].age + "</td>");
+            document.write("<td>" + student[i].grade + "</td>");
+            document.write("<td>" + student[i].subjects + "</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

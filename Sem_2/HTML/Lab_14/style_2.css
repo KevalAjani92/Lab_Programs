@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+.page{
+    width: 100%;
+    float: left;
+    background-image: linear-gradient(to top,#efd3cf,#e8edf1);
+    height: 800px;
+}
+.main{
+    width: 70%;
+    float: left;
+    margin-left: 15%;
+    border: 2px solid black;
+    height: 600px;
+    margin-top: 10%;
+}
+.photo{
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-image: url(./bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.details{
+    height: 100%;
+    float: left;
+    width: 50%;
+    background-color: white;
+    padding: 10px;
+    padding-left: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

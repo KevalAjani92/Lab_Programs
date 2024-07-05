@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">Employee Registration</h1>
+    <form action="" method="post">
+    <fieldset style="width: 50%; margin:auto;">
+        <legend>Personal Information</legend>
+        
+            <table align="center">
+                <tr>
+                    <td>Employee Id</td>
+                    <td>:</td>
+                    <td><input type="text" name="Employe id" id=""></td>
+                </tr>
+                <tr>
+                    <td>Employee Name</td>
+                    <td>:</td>
+                    <td><input type="text" name="Name" id=""></td>
+                </tr>
+                <tr>
+                    <td>Email Id</td>
+                    <td>:</td>
+                    <td><input type="email" name="Email" id=""></td>
+                </tr>
+                <tr>
+                    <td>Contact Number</td>
+                    <td>:</td>
+                    <td><input type="tel" name="Number" id="" pattern="[0-9]{10}" title="Enter Valid Input"></td>
+                </tr>
+                <tr>
+                    <td>Marital Status</td>
+                    <td>:</td>
+                    <td><input type="radio" name="Marital" id="">Married
+                        <input type="radio" name="Marital" id="">Single
+                    </td>
+                </tr>
+            </table>
+    </fieldset>
+    <fieldset style="width: 50%; margin: auto;">
+        <legend>Education/Experience</legend>
+            <table align="center">
+                <tr>
+                    <td>Education</td>
+                    <td>:</td>
+                    <td><textarea name="Education" id="" cols="30" rows="4"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Experience</td>
+                    <td>:</td>
+                    <td><textarea name="Exp" id="" cols="30" rows="4"></textarea></td>
+                </tr>
+            </table>
+    </fieldset>
+    <fieldset style="width: 50%; margin: auto;">
+        <legend>Job Details</legend>
+            <table align="center">
+                <tr>
+                    <td>Designation</td>
+                    <td>:</td>
+                    <td><textarea name="Designation" id="" cols="30" rows="4"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Job Location</td>
+                    <td>:</td>
+                    <td><select name="Location" id="">
+                        <option disabled selected>Select Location</option>
+                        <option value="Rajkot">Rajkot</option>
+                        <option value="Ahamedabad">Ahamedabad</option>
+                        <option value="Jamnagar">Jamnagar</option>
+                        <option value="Surat">Surat</option>
+                        <option value="Vadodara">Vadodara</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Salary</td>
+                    <td>:</td>
+                    <td><input type="text" name="Salary" id="" pattern="[0-9]"></td>
+                </tr>
+            </table>
+    </fieldset>
+    <table align="center">
+        <tr>
+            <td><input type="submit" value="Submit"></td>
+            <td><input type="button" value="Cancel"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

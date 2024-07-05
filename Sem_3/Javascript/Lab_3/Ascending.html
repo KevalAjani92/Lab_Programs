@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascending</title>
+</head>
+
+<body>
+    <script>
+        let n = parseInt(prompt("Enter Array Size:"));
+        let a = [];
+        for (i = 0; i < n; i++) {
+            a[i] = parseInt(prompt("Enter Value Of a[" + i + "] : "));
+        }
+        for (i = 0; i < a.length; i++) {
+            for (j = i + 1; j < a.length; j++) {
+                if (a[i] > a[j]) {
+                    let temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+
+        }
+        console.log(a);
+    </script>
+</body>
+
+</html>

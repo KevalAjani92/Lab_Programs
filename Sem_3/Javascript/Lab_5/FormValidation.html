@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">    
+    <style>
+        .container {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="display-3 text-center mb-5">Sign Up Page</div>
+
+    <div class="container">
+        <form action="#" class="row">
+            <div class="col-12 mb-2">
+                <label class="form-label" for="user">Username</label>
+                <input type="text" class="form-control" id="user" placeholder="Username">
+            </div>
+            <div class="col-12 mb-2">
+                <label class="form-label" for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="E-mail">
+            </div>
+            <div class="col-12 mb-2">
+                <label class="form-label" for="pass">Password</label>
+                <input type="password" class="form-control" id="pass" placeholder="Password">
+            </div>
+            <div class="col-12 mb-2">
+                <label class="form-label" for="pass1">Confirm Password</label>
+                <input type="password" class="form-control" id="pass1" placeholder="Confirm Password">
+            </div>
+            <div class="col-12 row mb-2">
+                <div class="col-6">
+                    <label class="form-label" for="DOB">Date Of Birth</label>
+                    <input type="date" class="form-control" id="DOB">
+                </div>
+                <div class="col-6">
+                    <label class="form-label" for="Enroll">Enrollment No.</label>
+                    <input type="text" class="form-control" id="Enroll">
+                </div>
+                <div class="col-2 mt-5">
+                    <button class="btn btn-primary" type="submit" onclick="validate()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script> -->
+        <!-- <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script> -->
+    <script>
+        function validate() {
+            let user = document.getElementById("user");
+            let email = document.getElementById("email");
+            let pass = document.getElementById("pass");
+            let pass1 = document.getElementById("pass1");
+            let enroll = document.getElementById("Enroll");
+
+            let dob=document.getElementById("DOB").value;
+            dob=new Date(dob);
+            let date =new Date();
+
+            var pattern = /^[a-zA-Z0-9\.]+@[a-zA-Z_]+?\.[a-zA-Z0-9]{2,3}$/;
+            var pattern1=/[a-zA-z]{3,}[!@#$%^*]{1,}[0-9]{1,}/
+            if(((user.value).trim()).length<8){
+                alert("Username must have minimum 8 characters");
+            }
+            var regex =new RegExp(pattern);
+            var regex1=new RegExp(pattern1);
+            if(!(regex.test(email.value))){
+                alert("Email Not Valid");
+            }
+            if(((pass.value).length<8 ||(pass.value).length>12) ){
+                alert("Password should be between 8-12 characters");
+            }else if(!(regex1.test(pass.value))){
+                alert("Password must contain 1 digit and 1 special character");
+                // console.log("Not Valid");
+            }
+            if(!((pass1.value).match((pass.value)))){
+                alert("Confirm Password And Password must have same");
+            }
+            let temp=date.getFullYear()-dob.getFullYear();
+            
+            if(temp<18){
+                alert("Age Must Be greater than 18");
+            }
+            if((enroll.value).length!=11){
+                alert("Enrollment Number Must Be Of 11 Digit");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

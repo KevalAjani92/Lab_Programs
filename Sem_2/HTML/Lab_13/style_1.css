@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    float: left;
+}
+.main{
+    width: 100%;
+}
+.header1{
+    width: 100%;
+    float: left;
+    background-color: grey;
+    padding: 10px;
+    height: 150px;
+    border-bottom: 10px solid green;
+    margin-bottom: 10px;
+}
+.shoplogo{
+    width: 10%;
+    float: left;
+    background-color: white;
+}
+.navigation{
+    width: 80%;
+    float: right;
+}
+.links{
+    width: 10%;
+    float: right;
+}
+.navigation a{
+    text-decoration: none;
+    color: white;
+}
+.header2{
+    width: 100%;
+    float: left;
+    border: 2px solid green;
+    padding: 10px;
+}
+.windowlogo{
+    width: 15%;
+    float: left;
+}
+.para1{
+    width: 60%;
+    float: right;
+    font-size: 18px;
+}
+.button{
+    width: 15%;
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: aqua;
+    border-radius: 200px;
+}
+.button a{
+    text-decoration: none;
+    color: black;
+}
+.content{
+    width: 100%;
+    float: left;
+}
+.content1{
+    width: 59%;
+    float: left;
+    /* border: 2px solid black; */
+    height: 200px;
+}
+.content2{
+    width: 39%;
+    float: right;
+    height: 200px;
+    padding: 5px;
+}
+.para2{
+    font-size: 20px;
+    font-weight: 700;
+}
+.icon{
+    width: 100%;
+}
+.icon span{
+    border: 1px solid black;
+}
+.iconimg{
+    width: 20%;
+    float: left;
+}
+.iconpara{
+    width: 75%;
+    float: right;
+}

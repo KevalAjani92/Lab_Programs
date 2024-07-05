@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+.main{
+    float: left;
+    width: 100%;
+}
+.navbar{
+    background-color: aqua;
+    width: 100%;
+    padding: 10px;
+}
+.navbar a{
+    display: inline-block;
+    padding: 10px;
+    color: orange;
+    font-size: 30px;
+}
+a:visited{
+    color: red;
+}
+.content{
+    background-color: pink;
+    padding: 20px;
+}
+p{
+    font-size: 20px;
+}
+.first::first-line{
+    color: blue;
+    font-size: 30px;
+}
+.second::first-letter{
+    color: red;
+    font-size: 50px;
+}
+.third{
+    font-size: 20px;
+}
+span::selection{
+    background-color: yellow;
+}
+.image{
+    width: 50%;
+    margin: 20px 30px;
+}
+img:hover{
+    box-shadow: 5px 5px 10px red;
+    width: 90%;
+}

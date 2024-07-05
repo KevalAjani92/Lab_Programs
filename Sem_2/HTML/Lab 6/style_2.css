@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+}
+div{
+    float: left;
+}
+.page{
+    width: 100%;
+}
+.header{
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+.logo{
+    width: 30%;
+}
+.nav{
+    width: 70%;
+}
+.navi{
+    float: right;
+    padding: 20px;
+    font-size: 20px;
+    width: 15%;
+    margin-right: 2%;
+}
+.main{
+    width: 100%;
+}
+.aside{
+    width: 30%;
+    background-color: red;
+    height: 310px;
+}
+#sidebar{
+    height: 20px;
+    border-color: red;
+}
+.aside_ele{
+    width: 100%;
+    padding-bottom: 30px;
+    text-align: center;
+    border: 1px solid orange;
+    margin-bottom: 5px;
+}
+.content{
+    width: 70%;
+    border: 1px dotted black;
+    float: right;
+    height: 310px;
+    padding: 5px;
+}
+.row1{
+    width: 100%;
+}
+.u_image{
+    width: 18%;
+    font-size: small;
+}
+#image1{
+    margin-right: 10px;
+}
+.row2{
+    width: 100%;
+}
+.l_image{
+    margin-top: 10px;
+    width: 18%;
+    font-size: small;
+}
+#image4{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#image6{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.footer{
+    background-color: blue;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    height: 35px;
+}
+@media (max-width:700px){
+    .logo{
+        width: 100%;
+        margin-left:120px;
+    }
+    .nav{
+        width: 100%;
+    }
+    .navi{
+        margin-right: 20px;
+        padding: 20px;
+    }
+    .aside{
+        width: 100%;
+    }
+    .content{
+        width: 100%;
+        height: 400px;
+        word-wrap: break-word;
+    }
+}
