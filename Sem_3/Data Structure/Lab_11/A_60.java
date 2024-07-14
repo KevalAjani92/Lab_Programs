@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
 class StackImplement {
+    int size;
+
+    public StackImplement(int size){
+        this.size=size;
+    }
 
     class Node {
 
@@ -14,145 +19,126 @@ class StackImplement {
         }
     }
 
-    public Node first = null;
+    public Node top = null;
 
-    public void insertAtFirst(int info) {
+    public void push(int data){
+        if(countNode()>=size){
+            System.out.println("Stack Overflow");
+            return;
+        }
+        Node newNode = new Node(data);
 
-        Node newNode = new Node(info);
-
-        newNode.link = first;
-        first = newNode;
+        Node temp = top;
+        top = newNode;
+        top.link = temp;
     }
 
-    public int countStack(){
-        
-        Node save = first;
+    public int pop(){
+        if(countNode()==0){
+            System.out.println("Stack UnderFlow");
+            return -1;
+        }
+        int temp=top.info;
+        top=top.link;
+        return temp;
+    }
+    public int peep(int index){
+        if(countNode()-index+1<=0){
+            System.out.println("Stack Underflow");
+            return -1;
+        }
+        Node save=top;
+        for (int j = 0; j < index-1; j++) {
+            save=save.link;
+        }
+        return save.info;
+    }
+    public void change(int data,int index){
+        if(countNode()-index+1<=0){
+            System.out.println("Stack Underflow");
+            return;
+        }
+        Node save=top;
+        for (int j = 0; j < index-1; j++) {
+            save=save.link;
+        }
+        save.info=data;
+    }
+    public int countNode() {
         int count = 0;
-
-        while( save != null ){
-
-            save = save.link;
-            count++;
-        }
-
-        if( count == 0 ){
-            
-            return 0;
-        }
-        else{
-
+        if (top == null) {
+            count = 0;
             return count;
         }
+        Node save = top;
+        while (save != null) {
+            count++;
+            save = save.link;
+        }
+        return count;
     }
-
     public void displayStack(){
-
-        if( first == null ){
-
-            System.out.println("Stack Is  Empty");
-        }
-        
-        Node save = first;
-
-        System.out.print("Stack = [\n");
-
-        while( save != null ){
-
-            System.out.println( save.info );    
-
-            save = save.link;
-        }
-        
-        System.out.println("]");
-    }
-
-    public void pop(int info){
-
-        if( first == null ){
-
-            System.out.println("\nStack Is Empty");
+        if(top==null){
+            System.out.println("Stack Is Empty");
             return;
         }
-
-        Node save = first;
-
-        while( save.link != null && save.link.info != info ){
-
-            save = save.link;
+        Node save=top;
+        while (save!=null) {
+            System.out.println(save.info);
+            save=save.link;
         }
-
-        if( save.link == null ){
-
-            System.out.println("\nElement Not Found");
-            return;
-        }
-
-        save.link = save.link.link;
-
-        System.out.println("Poped Element :> " + save.link.info );
-
-        System.out.println("After Poped Element :-> ");
-        displayStack();
-        
-        return;
-    }
-
-    public void peep( int position ){
-
-        int top = countStack();
-
-        System.out.println("Top Is :-> "+top);
-
-        if( first == null || position <= 0 || position > top ){
-
-            System.out.println("Stack Underflow ");
-            return;
-        }
-        
-        Node save = first;
-
-        for( int i = 1 ; i < position ; i++ ){
-
-            save = save.link;
-        }
-
-        System.out.println("Element From Top Is :-> " + save.info );
-    }
-
-    public void change( int position , int info ){
-
-        int top = countStack();
-
-        System.out.println("Top Is :-> "+top);
-
-        if( first == null || position <= 0 || position > top ){
-
-            System.out.println("Stack Underflow ");
-            return;
-        }
-        
-        Node save = first;
-
-        for( int i = 1 ; i < position ; i++ ){
-
-            save = save.link;
-        }
-
-        save.info = info;
-
-        System.out.println("Changed Element From Top Is :-> " + save.info );
-
-        displayStack();
     }
 }
 public class A_60{
     public static void main(String[] args) {
-        StackImplement stk=new StackImplement();
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Size Of Stack : ");
+        int n = sc.nextInt();
+        StackImplement stk=new StackImplement(n);
+        int m;
+        System.out.println("Enter Following Digits For Operations\n");
+        System.out.println("1 for push()");
+        System.out.println("2 for pop()");
+        System.out.println("3 for peep()");
+        System.out.println("4 for change()");
+        System.out.println("5 for display()");
+        System.out.println("6 for exit");
 
-        System.out.println("Enter Size Of Stack : ");
-        int n =sc.nextInt();
+        while (true) {
+            System.out.print("Enter Digit for Operation : ");
+            m = sc.nextInt();
+            switch (m) {
+                case 1:
+                    System.out.print("Enter Element To Push : ");
+                    int x = sc.nextInt();
+                    stk.push(x);
+                    break;
+                case 2:
+                    System.out.println(stk.pop());
+                    break;
+                case 3:
+                    System.out.print("Enter Index To Show element : ");
+                    int i = sc.nextInt();
+                    System.out.println(stk.peep(i));
+                    break;
+                case 4:
+                    System.out.print("Enter Element To Change : ");
+                    int y = sc.nextInt();
+                    System.out.print("Enter Index To Change : ");
+                    int j = sc.nextInt();
+                    stk.change(y, j);
+                    break;
+                case 5:
+                stk.displayStack();
+                    break;
+                case 6:
+                System.exit(0);
+                    break;
 
-        
+                default:
+                    System.out.println("Enter Valid Input");
+                    break;
+            }
+        }
     }
 }

@@ -1,8 +1,8 @@
 package Data_Structure_LL;
 public class LinkedListDemo {
-    class Node {
-        int info;
-        Node link;
+    public class Node {
+        public int info;
+        public Node link;
 
         public Node(int info) {
             this.info = info;

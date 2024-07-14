@@ -78,8 +78,8 @@ public class A_38 {
         System.out.println("3 for peep()");
         System.out.println("4 for change()");
         System.out.println("5 for display()");
-        System.out.println("-1 for exit");
-        do{
+        System.out.println("6 for exit");
+        while (true){
             
             System.out.print("Enter Digit for Operation : ");
             m = sc.nextInt();
@@ -90,7 +90,7 @@ public class A_38 {
                     s.push(x);
                     break;
                 case 2:
-                    System.out.print(s.pop());
+                    System.out.println(s.pop());
                     break;
                 case 3:
                     System.out.print("Enter Index To Show element : ");
@@ -107,10 +107,14 @@ public class A_38 {
                 case 5:
                     s.display();
                     break;
+                case 6:
+                    System.exit(0);
+                    break;
 
                 default:
+                    System.out.println("Enter Valid Input");
                     break;
             }
-        }while (m >= 1 && m <= 5); 
+        }
     }
 }
