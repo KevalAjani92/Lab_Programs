@@ -55,4 +55,13 @@ class Stack_Polish{
         }
         return stackArray[top - i + 1];
     }
+    public void display() {
+        if (top == -1) {
+            System.out.println("Stack Underflow");
+            return;
+        }
+        for (int i = top; i >= 0; i--) {
+            System.out.println(stackArray[i]);
+        }
+    }
 }

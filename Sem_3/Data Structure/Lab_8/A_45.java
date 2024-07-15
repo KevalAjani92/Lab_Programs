@@ -9,7 +9,7 @@ public class A_45 {
             return 4;
         } else if (next == '^') {
             return 5;
-        } else if (next >= 'a'&& next<='z' || next >= 'A'&& next<='Z') {
+        } else if (next >= 'a'&& next<='z') {
             return 8;
         }else if(next=='('){
             return 0;
@@ -23,7 +23,7 @@ public class A_45 {
             return 3;
         } else if (next == '^') {
             return 6;
-        } else if (next >= 'a'&& next<='z' || next >= 'A'&& next<='Z') {
+        } else if (next >= 'a'&& next<='z') {
             return 7;
         }else if(next=='('){
             return 9;
@@ -35,7 +35,7 @@ public class A_45 {
     public static int R(char next) {
         if (next == '+' || next == '-' || next == '*' || next == '/'||next == '^') {
             return -1;
-        }else if (next >= 'a'&& next<='z' || next >= 'A'&& next<='Z') {
+        }else if (next >= 'a'&& next<='z') {
             return 1;
         }
         return 0;
@@ -77,7 +77,7 @@ public class A_45 {
             char next=infix.charAt(i);
             if(stk.top<0){
                 System.out.println("Invalid");
-                return null;
+                return "null";
             }
             while (G(stk.peep(1))>F(next)) {
                 char temp=stk.pop();
@@ -86,7 +86,7 @@ public class A_45 {
 
                 if(rank<1){
                     System.out.println("Invalid");
-                    return null;
+                    return "null";
                 }
             }
             if(G(stk.peep(1))!=F(next)){
@@ -111,6 +111,6 @@ public class A_45 {
         
         StringBuffer postfix = new StringBuffer("");
         
-        System.out.println("Postfix : " + getPostfix(infix, postfix));
+        System.out.println("Postfix : " + getPostfixShortCut(infix, postfix));
     }
 }
