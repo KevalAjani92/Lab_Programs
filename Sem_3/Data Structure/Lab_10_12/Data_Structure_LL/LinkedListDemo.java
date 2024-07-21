@@ -217,6 +217,29 @@ public class LinkedListDemo {
             }
             temp = temp.link;
         }
+        System.out.println("After removing Duplicate -> ");
+        displayLinkedList();
+    }
+
+    public void swapTwoConsecutive() {
+        if (first == null) {
+            System.out.println("LinkedList is Empty");
+            return;
+        }
+        Node temp1=null,temp2=null,current=first;
+        while (current!=null && current.link!=null) {
+            if(temp1!=null){
+                temp1.link.link=current.link;
+            }
+            temp1=current.link;
+            current.link=current.link.link;
+            temp1.link=current;
+
+            if(temp2==null) temp2=temp1;
+
+            current=current.link;
+        }
+        first=temp2;
         displayLinkedList();
     }
 }

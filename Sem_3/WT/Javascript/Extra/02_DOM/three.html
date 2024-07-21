@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement Using DOM</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const divCustom=document.createElement('div');
+    console.log(divCustom);
+    divCustom.className='main';
+    divCustom.id='custom';
+    divCustom.setAttribute('title','customDiv');
+    divCustom.style.backgroundColor='red';
+    divCustom.style.color='white';
+    divCustom.style.padding='12px';
+    // divCustom.innerText="Keval Ajani";
+    const addText=document.createTextNode("Keval Ajani");
+    divCustom.appendChild(addText);
+
+    document.body.appendChild(divCustom);
+</script>
+</html>
