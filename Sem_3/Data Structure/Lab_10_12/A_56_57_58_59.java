@@ -13,8 +13,9 @@ public class A_56_57_58_59 {
         l2.insertAtFirst(15);
         l2.insertAtFirst(20);
         l2.insertAtFirst(25);
-
-        l2.swapTwoConsecutive();
+        
+        l2.swapKthNode(4);
+        // l2.swapTwoConsecutive();
         // int userChoice;
         // System.out.println("Enter => \n1 to insertNode at first\n" + //
         //         "2 to insertNode at last\n" + //

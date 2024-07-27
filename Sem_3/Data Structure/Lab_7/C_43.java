@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Stack;
 
-class Interval {
+class Interval{
     int start, end;
 
     Interval(int start, int end) {

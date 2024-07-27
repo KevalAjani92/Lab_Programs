@@ -242,4 +242,15 @@ public class LinkedListDemo {
         first=temp2;
         displayLinkedList();
     }
+    public void swapKthNode(int k){
+        if (first == null) {
+            System.out.println("LinkedList is Empty");
+            return;
+        }
+        int middle=(int)Math.ceilDiv(countNode(), 2);
+        k=k%middle;
+        int front=k;
+        int rear=countNode()-k+1;
+        System.out.println(front+" "+rear);
+    }
 }

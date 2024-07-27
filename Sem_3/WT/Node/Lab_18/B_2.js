@@ -13,11 +13,11 @@ const server=http.createServer((req,res)=>{
     }else if(req.url === '/download Page'){
         res.end("Download Page");
     }else{
-        res.end("Hello World");
+        res.end("Hello World from");
     }
 })
 
-const port=1010;
+const port=3000;
 
 server.listen(port,()=>{
     console.log(`Server Running On ${port}`);

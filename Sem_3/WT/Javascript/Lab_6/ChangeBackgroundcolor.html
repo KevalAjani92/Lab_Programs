@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <button type="button" onclick="changeColor()">Click</button>
     <script>
-        let body=document.querySelector('body');
+        let body = document.querySelector('body');
         changeColor();
         function changeColor() {
-            let r=Math.random()*255;
-            let g=Math.random()*255;
-            let b=Math.random()*255;
-            let ans=`rgb(${r},${g},${b})`;
-            body.style.backgroundColor=ans;
+            let r = Math.floor(Math.random() * 255);
+            let g = Math.floor(Math.random() * 255);
+            let b = Math.floor(Math.random() * 255);
+            let ans = `rgb(${r},${g},${b})`;
+            body.style.backgroundColor = ans;
         }
     </script>
 </body>
+
 </html>
