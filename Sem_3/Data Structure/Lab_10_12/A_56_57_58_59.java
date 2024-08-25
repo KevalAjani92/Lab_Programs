@@ -8,14 +8,14 @@ public class A_56_57_58_59 {
         Scanner sc = new Scanner(System.in);
 
         LinkedListDemo l2=new LinkedListDemo();
-        l2.insertAtFirst(5);
+        l2.insertAtFirst(3);
         l2.insertAtFirst(10);
-        l2.insertAtFirst(15);
-        l2.insertAtFirst(20);
-        l2.insertAtFirst(25);
+        l2.insertAtFirst(6);
+        l2.insertAtFirst(18);
         
-        l2.swapKthNode(4);
-        // l2.swapTwoConsecutive();
+        // l2.swapKthNode(4);
+        l2.addGCD();
+        l2.displayLinkedList();
         // int userChoice;
         // System.out.println("Enter => \n1 to insertNode at first\n" + //
         //         "2 to insertNode at last\n" + //

@@ -49,6 +49,27 @@
                 "age": 14,
                 "grade": "9th",
                 "subjects": ["History", "Math", "Art"]
+            },
+            {
+                "id": 3,
+                "name": "Charlie Brown",
+                "age": 16,
+                "grade": "11th",
+                "subjects": ["Biology", "Chemistry", "Physics"]
+            },
+            {
+                "id": 4,
+                "name": "Diana Prince",
+                "age": 17,
+                "grade": "12th",
+                "subjects": ["English", "History", "Economics"]
+            },
+            {
+                "id": 5,
+                "name": "Ethan Hunt",
+                "age": 15,
+                "grade": "10th",
+                "subjects": ["Physical Education", "Math", "Geography"]
             }
         ]
         function displayStudent() {
@@ -58,7 +79,7 @@
             temp += ('<div class="row">')
 
             for (let i = 0; i < student.length; i++) {
-                temp += ('<div class="card col-4 p-0 me-2" style="width: 20rem;">');
+                temp += ('<div class="card col-4 p-0 me-2 mb-3" style="width: 20rem;">');
                 temp += ('<img src="./blank.jpg" width="100%" class="card-img-top" alt="...">')
                 temp += ('<div class="card-body">')
                 temp += ('<h3 class="card-title">' + student[i].name + '</h3>')
@@ -143,6 +164,7 @@
                     timer: 1500
                 });
                 document.getElementById('btnCreate').innerHTML = 'Add';
+                window.scrollTo(document.body.scrollWidth, document.body.scrollHeight);
             } else {
                 student.push(tempObj);
                 Swal.fire({
@@ -152,6 +174,7 @@
                     showConfirmButton: false,
                     timer: 1500
                 });
+                window.scrollTo(document.body.scrollWidth, document.body.scrollHeight);
             }
             displayStudent();
             document.getElementById('txtName').value = "";

@@ -32,7 +32,7 @@ const obj4={...obj1,...obj2};
 
 // console.log(Object.keys(user));
 // console.log(Object.values(user));
-// console.log(Object.entries(user));
+console.log(Object.entries(user));
 
 // console.log(user.hasOwnProperty('age'));
 
