@@ -18,7 +18,7 @@ public class A_96 {
             if (arr[i] <= arr[j]) {
                 temp[k++] = arr[i++];
             } else {
-                temp[k++] = arr[j++];
+                temp[k++] = arr[j++];   
             }
         }
         if (i > mid) {
