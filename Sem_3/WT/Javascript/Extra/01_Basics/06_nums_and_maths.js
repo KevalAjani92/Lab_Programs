@@ -5,7 +5,7 @@ const balance=new Number(100);
 // console.log(balance);
 
 const temp = 123.8966;
-// console.log(temp.toPrecision(5));
+console.log(temp.toPrecision(5));
 
 const hundreds = 1000000;
 // console.log(hundreds.toLocaleString('en-IN'));

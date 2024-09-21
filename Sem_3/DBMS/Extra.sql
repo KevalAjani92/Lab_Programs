@@ -195,36 +195,90 @@ SELECT O.ORD_NO, O.purch_amt, C.cust_name, C.city
 FROM CUSTOMER2 AS C INNER JOIN ORDERS AS O ON C.customer_id = O.customer_id
 WHERE O.purch_amt BETWEEN 500 AND 2000;
 
---3. Write a SQL query to find the salesperson(s) and the customer(s) he represents. Return Customer Name,
---city, Salesman, commission.
---4. Write a SQL query to find salespeople who received commissions of more than 12 percent from the
---company. Return Customer Name, customer city, Salesman, commission.
---5. Write a SQL query to locate those salespeople who do not live in the same city where their customers live
---and have received a commission of more than 12% from the company. Return Customer Name, customer
---city, Salesman, salesman city, commission.
---6. Write a SQL query to find the details of an order. Return ord_no, ord_date, purch_amt, Customer Name, grade,
---Salesman, commission.
---7. Write a SQL statement to join the tables salesman, customer and orders so that the same column of each
---table appears once and only the relational rows are returned.
---8. Write a SQL query to display the customer name, customer city, grade, salesman, salesman city. The results
---should be sorted by ascending customer_id.
---9. Write a SQL query to find those customers with a grade less than 300. Return cust_name, customer city,
---grade, Salesman, salesmancity. The result should be ordered by ascending customer_id. --10. Write a SQL statement to make a report with customer name, city, order number, order date, and order
---amount in ascending order according to the order date to determine whether any of the existing customers
---have placed an order or not.
+--3. Write a SQL query to find the salesperson(s) and the customer(s) he represents. Return Customer Name,city, Salesman, commission.
 
+SELECT S.name, C.cust_name, C.city, S.commission
+FROM CUSTOMER2 C JOIN SALESMAN S ON C.salesman_id = S.salesman_id;
+
+--4. Write a SQL query to find salespeople who received commissions of more than 12 percent from the company. Return Customer Name, customer city, Salesman, commission.
+
+SELECT S.name, C.cust_name, C.city, S.commission
+FROM CUSTOMER2 C JOIN SALESMAN S ON C.salesman_id = S.salesman_id
+WHERE S.commission > 0.12;
+
+--5. Write a SQL query to locate those salespeople who do not live in the same city where their customers live and have received a commission of more than 12% from the company. Return Customer Name, customer city, Salesman, salesman city, commission.
+
+SELECT C.cust_name, C.city, S.name, S.city, S.commission
+FROM CUSTOMER2 C JOIN SALESMAN S ON C.salesman_id = S.salesman_id
+WHERE S.commission > 0.12 AND C.city <> S.city;
+
+--6. Write a SQL query to find the details of an order. Return ord_no, ord_date, purch_amt, Customer Name, grade,Salesman, commission.
+
+SELECT O.ord_no, O.ord_date, O.purch_amt, C.cust_name, C.Grade, S.name, S.commission
+FROM CUSTOMER2 C JOIN SALESMAN S ON C.salesman_id = S.salesman_id
+    JOIN ORDERS O ON C.customer_id = O.customer_id;
+
+--7. Write a SQL statement to join the tables salesman, customer and orders so that the same column of each table appears once and only the relational rows are returned.
+
+SELECT C.customer_id, C.cust_name, C.city AS CUST_CITY, C.Grade, O.ord_no, O.purch_amt, O.ord_date, S.salesman_id, S.name, S.city AS SALE_CITY, S.commission
+FROM CUSTOMER2 C JOIN SALESMAN S ON C.salesman_id = S.salesman_id
+    JOIN ORDERS O ON C.customer_id = O.customer_id;
+
+--8. Write a SQL query to display the customer name, customer city, grade, salesman, salesman city. The results should be sorted by ascending customer_id.
+
+SELECT C.customer_id, C.cust_name, C.city AS C_CITY, C.Grade, S.name, S.city AS S_CITY
+FROM CUSTOMER2 C JOIN SALESMAN S ON C.salesman_id = S.salesman_id
+ORDER BY C.customer_id;
+
+--9. Write a SQL query to find those customers with a grade less than 300. Return cust_name, customer city,grade, Salesman, salesmancity. The result should be ordered by ascending customer_id. 
+
+SELECT C.customer_id, C.cust_name, C.city AS C_CITY, C.Grade, S.name, S.city AS S_CITY
+FROM CUSTOMER2 C JOIN SALESMAN S ON C.salesman_id = S.salesman_id
+WHERE C.Grade < 300
+ORDER BY C.customer_id
+
+--10. Write a SQL statement to make a report with customer name, city, order number, order date, and order amount in ascending order according to the order date to determine whether any of the existing customers have placed an order or not.
+
+SELECT C.cust_name, C.city, O.ord_no, O.ord_date, O.purch_amt
+FROM CUSTOMER2 AS C LEFT JOIN ORDERS AS O ON C.customer_id = O.customer_id
+ORDER BY O.ord_date;
 
 
 -------------Part B -----------
 
+SELECT *
+FROM CUSTOMER2;
+SELECT *
+FROM ORDERS;
+SELECT *
+FROM SALESMAN;
+
 -- 1. Write a SQL statement to generate a report with customer name, city, order number, order date, order amount, salesperson name, and commission to determine if any of the existing customers have not placed orders or if they have placed orders through their salesman or by themselves.
 SELECT C.cust_name, C.city, O.ord_no, O.ord_date, O.purch_amt, S.name, S.commission
-FROM CUSTOMER2 AS C LEFT JOIN ORDERS AS O ON C.customer_id = O.customer_id LEFT JOIN SALESMAN AS S ON O.salesman_id = S.salesman_id; 
+FROM CUSTOMER2 AS C LEFT JOIN ORDERS AS O ON C.customer_id = O.customer_id LEFT JOIN SALESMAN AS S ON O.salesman_id = S.salesman_id;
 
--- 2. Write a SQL statement to generate a list in ascending order of salespersons who work either for one or more
--- customers or have not yet joined any of the customers.
--- 3. Write a SQL query to list all salespersons along with customer name, city, grade, order number, date, and
--- amount.
+-- 2. Write a SQL statement to generate a list in ascending order of salespersons who work either for one or more customers or have not yet joined any of the customers.
+
+SELECT
+    S.salesman_id,
+    S.name,
+    S.commission
+FROM
+    SALESMAN S
+    LEFT JOIN
+    CUSTOMER2 C ON S.salesman_id = C.salesman_id
+GROUP BY 
+    S.salesman_id, 
+    S.name, 
+    S.commission
+ORDER BY 
+    S.name ASC;
+
+
+-- 3. Write a SQL query to list all salespersons along with customer name, city, grade, order number, date, and amount.
+
+
+
 -- 4. Write a SQL statement to make a list for the salesmen who either work for one or more customers or yet to
 -- join any of the customer. The customer may have placed, either one or more orders on or above order
 -- amount 2000 and must have a grade, or he may not have placed any order to the associated supplier.

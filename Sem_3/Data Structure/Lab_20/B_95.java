@@ -24,8 +24,8 @@ public class B_95 {
             count[i] += count[i - 1];
         }
         for (int i = output.length-1; i >= 0; i--) {
-            output[count[((arr[i] / place) % 10)] - 1] = arr[i];
-            count[((arr[i] / place) % 10)]--;
+            output[count[(arr[i] / place) % 10] - 1] = arr[i];
+            count[(arr[i] / place) % 10]--;
         }
         for (int i = 0; i < output.length; i++) {
             arr[i] = output[i];

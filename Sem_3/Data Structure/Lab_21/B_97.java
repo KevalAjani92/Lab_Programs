@@ -28,10 +28,10 @@ public class B_97 {
     }
 
     public static void quickSortArr2(int arr[], int si, int ei){
-        boolean flag = true;
-        int i = si;
-        int j = ei + 1;
         if (si < ei) {
+            boolean flag = true;
+            int i = si;
+            int j = ei + 1;
             int key = arr[si];
             while (flag) {
                 i++;
@@ -53,12 +53,11 @@ public class B_97 {
             int temp = arr[si];
             arr[si] = arr[j];
             arr[j] = temp;
-        }else{
-            return;
+            
+            quickSortArr(arr, si, j - 1);
+            quickSortArr(arr, j + 1, ei);
         }
 
-        quickSortArr(arr, si, j - 1);
-        quickSortArr(arr, j + 1, ei);
     }
     public static void main(String[] args) {
         int[] arr = { 42, 23, 74, 11, 65, 58, 94, 36, 99, 87 };

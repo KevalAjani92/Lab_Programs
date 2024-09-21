@@ -18,7 +18,7 @@ public class A_96 {
             if (arr[i] <= arr[j]) {
                 temp[k++] = arr[i++];
             } else {
-                temp[k++] = arr[j++];   
+                temp[k++] = arr[j++];
             }
         }
         if (i > mid) {
@@ -30,13 +30,16 @@ public class A_96 {
                 temp[k++] = arr[i++];
             }
         }
-        for (k = 0, i = si; k < temp.length; k++, i++) {
-            arr[i] = temp[k];
+        // for (k = 0, i = si; k < temp.length; k++, i++) {
+        // arr[i] = temp[k];
+        // }
+        for (k = 0; k < temp.length; k++) {
+            arr[si+k] = temp[k];
         }
     }
 
     public static void main(String[] args) {
-        int[] arr = { 2, 5, 1, 6, 3, 8 };
+        int[] arr = { 42, 23, 74, 11, 65, 58, 94, 36, 99, 87 };
         mergeSort(arr, 0, arr.length - 1);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
