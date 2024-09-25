@@ -9,13 +9,14 @@ public class A_45 {
             return 4;
         } else if (next == '^') {
             return 5;
-        } else if (next >= 'a'&& next<='z') {
+        } else if (next >= 'a' && next <= 'z' || next >= '0' && next <= '9') {
             return 8;
-        }else if(next=='('){
+        } else if (next == '(') {
             return 0;
         }
         return -1;
     }
+
     public static int F(char next) {
         if (next == '+' || next == '-') {
             return 1;
@@ -23,28 +24,29 @@ public class A_45 {
             return 3;
         } else if (next == '^') {
             return 6;
-        } else if (next >= 'a'&& next<='z') {
+        } else if (next >= 'a' && next <= 'z' || next >= '0' && next <= '9') {
             return 7;
-        }else if(next=='('){
+        } else if (next == '(') {
             return 9;
-        }else if(next==')'){
+        } else if (next == ')') {
             return 0;
         }
         return -1;
     }
+
     public static int R(char next) {
-        if (next == '+' || next == '-' || next == '*' || next == '/'||next == '^') {
+        if (next == '+' || next == '-' || next == '*' || next == '/' || next == '^') {
             return -1;
-        }else if (next >= 'a'&& next<='z') {
+        } else if (next >= 'a' && next <= 'z' || next >= '0' && next <= '9') {
             return 1;
         }
         return 0;
     }
 
-    public static String getPostfixShortCut(String infix,StringBuffer postfix){
+    public static String getPostfixShortCut(String infix, StringBuffer postfix) {
         Stack_Polish stk = new Stack_Polish(infix.length());
         stk.push('(');
-        
+
         for (int i = 0; i < infix.length(); i++) {
             char next = infix.charAt(i);
             if (next >= 'a' && next <= 'z') {
@@ -68,49 +70,51 @@ public class A_45 {
         }
         return postfix.toString();
     }
-    
-    public static String getPostfix(String infix,StringBuffer postfix){
+
+    public static String getPostfix(String infix, StringBuffer postfix) {
         Stack_Polish stk = new Stack_Polish(infix.length());
         stk.push('(');
-        int rank=0;
+        int rank = 0;
         for (int i = 0; i < infix.length(); i++) {
-            char next=infix.charAt(i);
-            if(stk.top<0){
+            char next = infix.charAt(i);
+            if (stk.top < 0) {
                 System.out.println("Invalid");
                 return "null";
             }
-            while (G(stk.peep(1))>F(next)) {
-                char temp=stk.pop();
+            while (G(stk.peep(1)) > F(next)) {
+                char temp = stk.pop();
                 postfix.append(temp);
-                rank+=R(temp);
+                rank += R(temp);
 
-                if(rank<1){
+                if (rank < 1) {
                     System.out.println("Invalid");
                     return "null";
                 }
             }
-            if(G(stk.peep(1))!=F(next)){
+            if (G(stk.peep(1)) != F(next)) {
                 stk.push(next);
-            }else{
+            } else {
                 stk.pop();
             }
         }
-        if(stk.top!=-1 || rank!=1){
+        if (stk.top != -1 || rank != 1) {
             System.out.println("Invalid");
             return null;
-        }else{
+        } else {
             return postfix.toString();
         }
     }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter String : ");
         String infix = sc.nextLine().toLowerCase() + ")";
-        
+
         StringBuffer postfix = new StringBuffer("");
-        
-        System.out.println("Postfix : " + getPostfixShortCut(infix, postfix));
+
+        // System.out.println("Postfix : " + getPostfixShortCut(infix, postfix));
+        System.out.println("Postfix : " + getPostfix(infix, postfix));
     }
 }

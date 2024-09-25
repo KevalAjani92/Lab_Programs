@@ -8,7 +8,7 @@ public class B_46 {
             return 3;
         } else if (next == '^') {
             return 6;
-        } else if (next >= 'a'&& next<='z') {
+        } else if (next >= 'a'&& next<='z' || next >= '0' && next <= '9') {
             return 8;
         }else if(next=='('){
             return 0;
@@ -22,7 +22,7 @@ public class B_46 {
             return 4;
         } else if (next == '^') {
             return 5;
-        } else if (next >= 'a'&& next<='z') {
+        } else if (next >= 'a'&& next<='z' || next >= '0' && next <= '9') {
             return 7;
         }else if(next=='('){
             return 9;
@@ -34,7 +34,7 @@ public class B_46 {
     public static int R(char next) {
         if (next == '+' || next == '-' || next == '*' || next == '/'||next == '^') {
             return -1;
-        }else if (next >= 'a'&& next<='z') {
+        }else if (next >= 'a'&& next<='z' || next >= '0' && next <= '9') {
             return 1;
         }
         return 0;

@@ -139,9 +139,20 @@ class Tree {
     }
 
     private void inorderRec(Node root) {
-        if (root != null) {
+        // if (root != null) {
+        // inorderRec(root.left);
+        // System.out.print(root.key + " ");
+        // inorderRec(root.right);
+        // }
+        if (root == null) {
+            System.out.print("Empty");
+            return;
+        }
+        if (root.left != null) {
             inorderRec(root.left);
-            System.out.print(root.key + " ");
+        }
+        System.out.print(root.key + " ");
+        if (root.right != null) {
             inorderRec(root.right);
         }
     }
@@ -151,11 +162,22 @@ class Tree {
     }
 
     private void postOrderRec(Node root) {
-        if (root != null) {
-            postOrderRec(root.left);
-            postOrderRec(root.right);
-            System.out.print(root.key + " ");
+        // if (root != null) {
+        //     postOrderRec(root.left);
+        //     postOrderRec(root.right);
+        //     System.out.print(root.key + " ");
+        // }
+        if (root == null) {
+            System.out.print("Empty");
+            return;
         }
+        if (root.left != null) {
+            postOrderRec(root.left);
+        }
+        if (root.right != null) {
+            postOrderRec(root.right);
+        }
+        System.out.print(root.key + " ");
     }
 
     private static void printTree(Node node, int level) {
@@ -180,7 +202,7 @@ class Tree {
 
 public class A_77_78 {
     public static void main(String[] args) {
-        //add,search and delete Node in Tree
+        // add,search and delete Node in Tree
         // PreOrder,InOrder,PostOrder Traversals
         Tree t1 = new Tree();
         t1.addElementItr(50);
@@ -194,7 +216,10 @@ public class A_77_78 {
         t1.addElementItr(15);
         t1.addElementItr(30);
 
-        t1.deleteElement(75);
-        t1.printTree();
+        // t1.deleteElement(75);
+        // t1.printTree();
+
+        // t1.inorder();
+        t1.postOrder();
     }
 }
