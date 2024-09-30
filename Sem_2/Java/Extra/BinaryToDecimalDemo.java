@@ -12,6 +12,6 @@ public class BinaryToDecimalDemo {
         return decNum;
     }
     public static void main(String[] args) {
-        System.out.println(BinaryToDecimalDemo.binaryToDec(1000));
+        System.out.println(BinaryToDecimalDemo.binaryToDec(1010));
     }
 }

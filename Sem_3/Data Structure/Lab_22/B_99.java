@@ -14,14 +14,21 @@ public class B_99 {
                     }
                 }
             }
+            printArr(arr);
         }
     }
 
-    public static void main(String[] args) {
-        int[] arr = { 42, 23, 74, 11, 65, 58, 94, 36, 99, 87 };
-        shellSort(arr);
+    public static void printArr(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 45, 20, 25, 10, 5, 60, 65, 32, 89, 11 };
+        shellSort(arr);
+        System.out.println("Output : ");
+        printArr(arr);
     }
 }

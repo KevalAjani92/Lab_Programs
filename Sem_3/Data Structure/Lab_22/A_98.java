@@ -2,6 +2,7 @@ public class A_98 {
 
     public static void heapSort(int arr[]) {
         buildMaxHeap(arr);
+        
         for (int i = arr.length - 1; i >= 0; i--) {
             int temp = arr[0];
             arr[0] = arr[i];
@@ -32,12 +33,16 @@ public class A_98 {
             heapify(arr, n, maxIndex);
         }
     }
-
-    public static void main(String[] args) {
-        int[] arr = { 42, 23, 74, 11, 65, 58, 94, 36, 99, 87 };
-        heapSort(arr);
+    public static void printArr(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        int[] arr = { 45, 20, 25, 10, 5, 60, 65, 32, 89, 11 };
+        heapSort(arr);
+        System.out.print("Output : ");
+        printArr(arr);
     }
 }

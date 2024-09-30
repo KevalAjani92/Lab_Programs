@@ -16,7 +16,7 @@ class Graph{
         adjList.putIfAbsent(u, new ArrayList<>());
         adjList.putIfAbsent(v, new ArrayList<>());
         adjList.get(u).add(v);
-        // adjList.get(v).add(u);  //for Undirected Graph
+        adjList.get(v).add(u);  //for Undirected Graph
     }
     public void dfs(int start){
         Set<Integer> visited = new HashSet<>();

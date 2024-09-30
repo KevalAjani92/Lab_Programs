@@ -1,14 +1,15 @@
 public class B_97 {
     public static void quickSortArr(int arr[], int si, int ei) {
         if (si >= ei) {
-        return;
+            return;
         }
         int pIndex = partition(arr, si, ei);
-        
-        quickSortArr(arr, si, pIndex-1);
-        quickSortArr(arr, pIndex+1, ei);
+
+        quickSortArr(arr, si, pIndex - 1);
+        quickSortArr(arr, pIndex + 1, ei);
 
     }
+
     public static int partition(int arr[], int si, int ei) {
         int pivot = arr[si];
         int i = ei + 1;
@@ -27,7 +28,7 @@ public class B_97 {
         return i;
     }
 
-    public static void quickSortArr2(int arr[], int si, int ei){
+    public static void quickSortArr2(int arr[], int si, int ei) {
         if (si < ei) {
             boolean flag = true;
             int i = si;
@@ -53,17 +54,22 @@ public class B_97 {
             int temp = arr[si];
             arr[si] = arr[j];
             arr[j] = temp;
-            
             quickSortArr(arr, si, j - 1);
             quickSortArr(arr, j + 1, ei);
         }
 
     }
-    public static void main(String[] args) {
-        int[] arr = { 42, 23, 74, 11, 65, 58, 94, 36, 99, 87 };
-        quickSortArr2(arr, 0, arr.length - 1);
+
+    public static void printArr(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 45, 20, 25, 10, 5, 60, 65, 32, 89, 11 };
+        quickSortArr2(arr, 0, arr.length - 1);
+        printArr(arr);
     }
 }
