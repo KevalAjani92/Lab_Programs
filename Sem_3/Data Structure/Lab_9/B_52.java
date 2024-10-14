@@ -25,16 +25,17 @@ class DQueue {
     }
 
     public void DQINSERT_FRONT(int x) {
-        if (front == -1) {
-            System.out.println("Empty");
-            return;
-        }
         if (front == 0) {
             System.out.println("Overflow");
             return;
         }
-        front--;
+        if (front == -1) {
+            front = rear = 0;
+        } else {
+            front--;
+        }
         QueueArray[front] = x;
+        return; 
     }
 
     public int DQDELETE_FRONT() {

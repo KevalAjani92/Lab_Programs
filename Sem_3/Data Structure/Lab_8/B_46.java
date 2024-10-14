@@ -144,5 +144,6 @@ public class B_46 {
         infix+=')';
         StringBuffer prefix=new StringBuffer("");
         System.out.println("Prefix : "+getPrefix(infix, prefix));
+        sc.close();
     }
 }

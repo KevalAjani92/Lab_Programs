@@ -116,5 +116,6 @@ public class A_45 {
 
         // System.out.println("Postfix : " + getPostfixShortCut(infix, postfix));
         System.out.println("Postfix : " + getPostfix(infix, postfix));
+        sc.close();
     }
 }

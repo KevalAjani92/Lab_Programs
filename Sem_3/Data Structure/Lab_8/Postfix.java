@@ -9,7 +9,7 @@ public class Postfix {
 
         for (int i = 0; i < postfix.length(); i++) {
             char temp = postfix.charAt(i);
-            if(temp==','){
+            if (temp == ',') {
                 continue;
             }
             if (Character.isDigit(temp)) {
@@ -59,5 +59,6 @@ public class Postfix {
         String postfix = sc.nextLine();
 
         System.out.println(evalPost(postfix));
+        sc.close();
     }
 }

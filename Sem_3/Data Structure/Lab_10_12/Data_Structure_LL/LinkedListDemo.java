@@ -46,8 +46,8 @@ public class LinkedListDemo {
         if (first == null || newNode.info <= first.info) {
             newNode.link = first;
             first = newNode;
-            displayLinkedList();
             System.out.println("After inserted in order ->");
+            displayLinkedList();
             return;
         }
         Node save = first;
@@ -148,8 +148,8 @@ public class LinkedListDemo {
             current = next;
         }
         first = prev;
-        System.out.println("After Reversing LinkedList -> ");
-        displayLinkedList();
+        // System.out.println("After Reversing LinkedList -> ");
+        // displayLinkedList();
     }
 
     public void sortLL() {

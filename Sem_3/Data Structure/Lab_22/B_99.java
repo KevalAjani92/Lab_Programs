@@ -14,7 +14,6 @@ public class B_99 {
                     }
                 }
             }
-            printArr(arr);
         }
     }
 

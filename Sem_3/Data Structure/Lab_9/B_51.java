@@ -68,33 +68,33 @@ public class B_51 {
         CircularQueue q1 = new CircularQueue(n);
 
         while (true) {
-        System.out.println("Enter Digit For Perform Below Operatio");
-        System.out.println("1 for insert");
-        System.out.println("2 for delete");
-        System.out.println("3 for display");
-        System.out.println("4 for Exit");
-        int choice=sc.nextInt();
+            System.out.println("Enter Digit For Perform Below Operatio");
+            System.out.println("1 for insert");
+            System.out.println("2 for delete");
+            System.out.println("3 for display");
+            System.out.println("4 for Exit");
+            int choice = sc.nextInt();
 
-        switch (choice) {
-        case 1:
-        System.out.println("Enter Element For insert : ");
-        int x=sc.nextInt();
-        q1.cqinsert(x);
-        break;
-        case 2:
-        System.out.println("Removed Element : "+q1.cqdelete());
-        break;
-        case 3:
-        q1.display();
-        break;
-        case 4:
-        System.exit(0);
-        break;
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter Element For insert : ");
+                    int x = sc.nextInt();
+                    q1.cqinsert(x);
+                    break;
+                case 2:
+                    System.out.println("Removed Element : " + q1.cqdelete());
+                    break;
+                case 3:
+                    q1.display();
+                    break;
+                case 4:
+                    System.exit(0);
+                    break;
 
-        default:
-        System.out.println("Enter Valid Digit");
-        break;
-        }
+                default:
+                    System.out.println("Enter Valid Digit");
+                    break;
+            }
         }
     }
 }

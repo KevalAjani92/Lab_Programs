@@ -48,5 +48,6 @@ public class A_47 {
         String postfix=sc.nextLine();
 
         System.out.println(evalPost(postfix));
+        sc.close();
     }
 }

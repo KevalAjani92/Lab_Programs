@@ -163,9 +163,9 @@ class Tree {
 
     private void postOrderRec(Node root) {
         // if (root != null) {
-        //     postOrderRec(root.left);
-        //     postOrderRec(root.right);
-        //     System.out.print(root.key + " ");
+        // postOrderRec(root.left);
+        // postOrderRec(root.right);
+        // System.out.print(root.key + " ");
         // }
         if (root == null) {
             System.out.print("Empty");

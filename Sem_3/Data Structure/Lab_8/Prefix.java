@@ -57,5 +57,6 @@ public class Prefix {
         StringBuffer prefix = new StringBuffer(sc.nextLine());
 
         System.out.println(evalPre(prefix.reverse()));
+        sc.close();
     }
 }
