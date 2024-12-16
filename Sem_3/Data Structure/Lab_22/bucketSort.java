@@ -18,7 +18,7 @@ public class bucketSort {
     public static void bucketSortArr(float arr[]) {
         int n = arr.length;
 
-        @SuppressWarnings("unchecked")
+        // @SuppressWarnings("unchecked")
         ArrayList<Float>[] buckets = new ArrayList[n];
         for (int i = 0; i < n; i++) {
             buckets[i] = new ArrayList<>();

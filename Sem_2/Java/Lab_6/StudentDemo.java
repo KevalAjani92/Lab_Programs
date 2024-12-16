@@ -15,6 +15,9 @@ class Student{
         subject_credits = new int[no_of_subjects_registered];
         grade_obtained= new String[no_of_subjects_registered];
     }
+    public Student(String string, int no_of_subjects_registered2) {
+        //TODO Auto-generated constructor stub
+    }
     double calculateSpi(){
         int sum=0;
         int creditSum=0;

@@ -20,6 +20,7 @@ void main(){
         printf("Enter Element in a[%d]:",i);
         scanf("%d",&a[i]);
     }
+    // k=n-k;  //for left rotation
     revese(a,0,n-1);    //reverse all element
     revese(a,0,k-1);    //reverse first k element
     revese(a,k,n-1);    //reverse remaining element

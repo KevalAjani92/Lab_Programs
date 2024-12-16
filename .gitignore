@@ -5,3 +5,10 @@ Sem_3/WT/Javascript/bootstrap-5.3.3-dist
 node_modules
 Extra
 Project
+Sem_2/TailwindCSS
+bin
+obj
+Properties
+.vs
+*.csproj
+*.config

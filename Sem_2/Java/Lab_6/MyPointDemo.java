@@ -29,8 +29,8 @@ public class MyPointDemo {
         MyPoint mp1=new MyPoint(2.5, 8.26);
         MyPoint mp2=new MyPoint(33.12, 4.2);
         double ans1=mp1.distance(mp2);
-        System.out.println("Distance 1"+ans1);
+        System.out.println("Distance 1 : "+ans1);
         double ans2=mp2.distance(45.2, 3.156);
-        System.out.println("Distance 2"+ans2);
+        System.out.println("Distance 2 : "+ans2);
     }
 }

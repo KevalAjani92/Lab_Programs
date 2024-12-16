@@ -21,9 +21,9 @@ public class A_1 {
                 words++;
             }
             sc.close();
-            System.out.println("Lines ="+line);
-            System.out.println("Char ="+(int)str.length());
-            System.out.println("Words ="+words);
+            System.out.println("Lines = "+line);
+            System.out.println("Char = "+(int)str.length());
+            System.out.println("Words = "+words);
         }catch(Exception e){
             e.printStackTrace();
         }

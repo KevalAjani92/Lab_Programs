@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Stack;
 
 class Interval{
@@ -67,5 +69,8 @@ public class C_43 {
         arr[2] = new Interval(2, 4);
         arr[3] = new Interval(9, 10);
         mergeIntervals(arr);
+        List<int[]> list = new ArrayList<>();
+        list.add(new int[]{1,2,3});
+        System.out.println(list);
     }
 }

@@ -54,7 +54,6 @@ public class B_97 {
             int temp = arr[si];
             arr[si] = arr[j];
             arr[j] = temp;
-            printArr(arr);
             quickSortArr(arr, si, j - 1);
             quickSortArr(arr, j + 1, ei);
         }

@@ -11,7 +11,6 @@ public class A_92 {
                     swapped=true;
                 }
             }
-            printArr(arr);
             if(!(swapped)){
                 break;
             }
