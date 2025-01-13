@@ -14,10 +14,10 @@ namespace Lab_1
         {
             //Program 1
 
-            //Console.WriteLine("Name : Nikunj Rathod");
-            //Console.WriteLine("Address : A - 11, Gokuldham Society");
-            //Console.WriteLine("Contact No. : 6786387498");
-            //Console.WriteLine("City : Jamnagar");
+            //Console.WriteLine("Name : Keval Ajani");
+            //Console.WriteLine("Address : Block-12,Surbhi Residency -1");
+            //Console.WriteLine("Contact No. : 1234567890");
+            //Console.WriteLine("City : Rajkot");
 
             //Program 2
 
@@ -77,7 +77,7 @@ namespace Lab_1
             //    case 3:
             //        Console.Write("Enter Radius : ");
             //        int radius = int.Parse(Console.ReadLine());
-            //        Console.WriteLine("Circle Area Is : " + (3.14 * radius * radius));
+                    //Console.WriteLine("Circle Area Is : " + (Math.PI * radius * radius));
             //        break;
 
             //    default:

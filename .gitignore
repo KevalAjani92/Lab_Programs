@@ -6,9 +6,4 @@ node_modules
 Extra
 Project
 Sem_2/TailwindCSS
-bin
-obj
-Properties
-.vs
-*.csproj
-*.config
+ASP.NET core

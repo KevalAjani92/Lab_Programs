@@ -1,0 +1,203 @@
+USE CSE_4A_221;
+
+------PART-A------
+--1. Write a function to print "hello world". 
+
+CREATE OR ALTER FUNCTION FN_HELLOWORLD()
+RETURNS VARCHAR(20)
+AS
+BEGIN 
+	RETURN 'HELLO WORLD'
+END
+
+SELECT DBO.FN_HELLOWORLD();
+
+--2. Write a function which returns addition of two numbers.
+
+CREATE OR ALTER FUNCTION FN_ADDITION(@N1 INT,@N2 INT)
+RETURNS INT
+AS
+BEGIN
+	RETURN @N1+@N2
+END
+
+SELECT DBO.FN_ADDITION(5,3) AS ADDITION;
+
+--3. Write a function to check whether the given number is ODD or EVEN. 
+
+CREATE OR ALTER FUNCTION FN_ODDEVEN(@NUM INT)
+RETURNS VARCHAR(20)
+AS
+BEGIN
+	IF @NUM%2=0
+		RETURN 'EVEN NUMBER'
+	RETURN 'ODD NUMBER'
+END
+
+SELECT DBO.FN_ODDEVEN(24);
+
+--4. Write a function which returns a table with details of a person whose first name starts with B. 
+
+CREATE OR ALTER FUNCTION FN_FNAMEPERSONB()
+RETURNS TABLE
+AS
+	RETURN(SELECT * FROM PERSON WHERE FIRSTNAME LIKE 'B%')
+
+SELECT * FROM DBO.FN_FNAMEPERSONB();
+
+--5. Write a function which returns a table with unique first names from the person table. 
+
+CREATE OR ALTER FUNCTION FN_UNIQUEFNAME()
+RETURNS TABLE
+AS
+	RETURN(SELECT DISTINCT FIRSTNAME FROM PERSON)
+
+SELECT * FROM DBO.FN_UNIQUEFNAME();
+
+--6. Write a function to print number from 1 to N. (Using while loop) 
+
+CREATE OR ALTER FUNCTION FN_PRINT1TON(@N INT)
+RETURNS VARCHAR(100)
+AS
+BEGIN
+	DECLARE @MSG VARCHAR(100),@COUNT INT
+	SET @MSG = ''
+	SET @COUNT = 1
+	WHILE(@COUNT <= @N)
+	BEGIN
+		SET @MSG = @MSG + ' '+CAST(@COUNT AS VARCHAR)
+		SET @COUNT = @COUNT+1
+	END
+	RETURN @MSG
+END
+
+SELECT DBO.FN_PRINT1TON(10);
+
+--7. Write a function to find the factorial of a given integer.
+
+CREATE OR ALTER FUNCTION FN_FACTORIAL(@NUM INT)
+RETURNS BIGINT
+AS
+BEGIN
+	DECLARE @ANS BIGINT,@I INT
+	SET @ANS = 1
+	SET @I = 1
+	WHILE(@I<=@NUM)
+	BEGIN
+		SET @ANS = @ANS*@I
+		SET @I = @I+1
+	END
+	RETURN @ANS
+END
+
+SELECT DBO.FN_FACTORIAL(5);
+
+
+------PART-B------
+--8. Write a function to compare two integers and return the comparison result. (Using Case statement) 
+
+CREATE OR ALTER FUNCTION FN_INTCOMPARE(@NUM1 INT,@NUM2 INT)
+RETURNS VARCHAR(100)
+AS
+BEGIN
+	RETURN CASE
+			WHEN @NUM1>@NUM2 THEN '1ST NUMBER IS LARGER'
+			WHEN @NUM1<@NUM2 THEN '2ND NUMBER IS LARGER'
+			ELSE 'BOTH NUMBERS ARE EQUAL'
+	END
+END
+
+SELECT DBO.FN_INTCOMPARE(8,8) AS COMPARISION;
+
+--9. Write a function to print the sum of even numbers between 1 to 20. 
+
+CREATE OR ALTER FUNCTION FN_EVENSUM1TO20()
+RETURNS INT
+AS
+BEGIN
+	DECLARE @COUNT INT ,@SUM INT
+	SET @COUNT = 2
+	SET @SUM = 0
+	WHILE(@COUNT <= 20)
+	BEGIN
+		SET @SUM = @SUM + @COUNT
+		SET @COUNT = @COUNT + 2
+	END
+	RETURN @SUM
+END
+
+SELECT DBO.FN_EVENSUM1TO20();
+
+--10. Write a function that checks if a given string is a palindrome 
+
+CREATE OR ALTER FUNCTION FN_ISPALINDROME(@STR VARCHAR(100))
+RETURNS VARCHAR(100)
+AS 
+BEGIN
+	DECLARE @REVSTR VARCHAR(100)
+	SET @REVSTR = REVERSE(@STR)
+	IF @STR = @REVSTR
+		RETURN 'PALINDROME'
+	RETURN 'NOT PALINDROME'
+END
+
+SELECT DBO.FN_ISPALINDROME('RACECAR');
+
+-------PART-C-------
+--11. Write a function to check whether a given number is prime or not. 
+
+CREATE OR ALTER FUNCTION FN_ISPRIME(@NUM INT)
+RETURNS VARCHAR(130)
+AS
+BEGIN
+	DECLARE @I INT=2
+	WHILE @I * @I <=@NUM
+		BEGIN
+			IF @NUM % @I =0
+				RETURN 'NOT PRIME'
+			SET @I = @I+1
+		END
+	RETURN 'PRIME'
+END
+
+SELECT DBO.FN_ISPRIME(23);
+
+--12. Write a function which accepts two parameters start date & end date, and returns a difference in days. 
+
+CREATE OR ALTER FUNCTION FN_DATEDIFFDAY(@D1 DATE,@D2 DATE)
+RETURNS INT
+AS
+BEGIN
+	RETURN (DATEDIFF(DAY,@D1,@D2))
+END
+
+SELECT DBO.FN_DATEDIFFDAY('1998-05-02','1999-05-02');
+
+--13. Write a function which accepts two parameters year & month in integer and returns total days each year. 
+
+CREATE OR ALTER FUNCTION FN_TOTAL_DAY(@YEAR INT,@MONTH INT)
+RETURNS INT
+AS
+BEGIN
+	RETURN DAY(EOMONTH(DATEFROMPARTS(@YEAR,@MONTH,1)))
+END
+
+SELECT DBO.FN_TOTAL_DAY(2000,2);
+
+--14. Write a function which accepts departmentID as a parameter & returns a detail of the persons. 
+
+CREATE OR ALTER FUNCTION FN_PERSON_DEPTID(@DEPTID INT)
+RETURNS TABLE
+AS 
+	RETURN (SELECT * FROM PERSON WHERE DEPARTMENTID = @DEPTID)
+
+SELECT * FROM DBO.FN_PERSON_DEPTID(2)
+
+--15. Write a function that returns a table with details of all persons who joined after 1-1-1991.
+
+CREATE OR ALTER FUNCTION FN_PERSON_GETBYDATE()
+RETURNS TABLE
+AS 
+	RETURN (SELECT * FROM PERSON WHERE JOININGDATE > '1991-01-01')
+
+SELECT * FROM DBO.FN_PERSON_GETBYDATE()

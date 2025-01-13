@@ -98,6 +98,14 @@ namespace Lab_2
             //diningTable.DisplayTableDetails();
 
             //Program-10
+
+            Payroll payroll = new Payroll("Jay Patel", 30000, 2000, 3000, 5000);
+
+            // Display Employee Details
+            payroll.DisplayEmployeeDetails();
+
+            // Calculate and Display Gross Salary
+            payroll.Gross_sal();
         }
     }
 }
