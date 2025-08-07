@@ -12,8 +12,8 @@ public class A_98 {
     }
 
     public static void buildMaxHeap(int arr[]) {
-        for (int i = ((arr.length - 1) / 2) - 1; i >= 0; i--) {
-            heapify(arr, arr.length - 1, i);
+        for (int i = (arr.length / 2) - 1; i >= 0; i--) {
+            heapify(arr, arr.length, i);
         }
     }
 

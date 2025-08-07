@@ -42,7 +42,7 @@ class Sync {
             MyThread mt2 = new MyThread("Child #2", a);
         try {
             mt1.thrd.join();
-             mt2.thrd.join();
+            mt2.thrd.join();
         }
         catch(InterruptedException exc) {
             System.out.println("Main thread interrupted.");
