@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array CRUD</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+  <body>
+    <h1 style="text-align: center; color: crimson">
+      Demonstration of Array Methods
+    </h1>
+    <div style="text-align: center">
+      <button
+        id="addBtn"
+        style="
+          padding: 10px;
+          margin: 5px;
+          border-radius: 10px;
+          background-color: lightgreen;
+        "
+      >
+        Add Element
+      </button>
+      <button
+        id="removeBtn"
+        style="
+          padding: 10px;
+          margin: 5px;
+          border-radius: 10px;
+          background-color: lightcoral;
+        "
+      >
+        Remove Element
+      </button>
+      <button
+        id="updateBtn"
+        style="
+          padding: 10px;
+          margin: 5px;
+          border-radius: 10px;
+          background-color: lightblue;
+        "
+      >
+        Update Element
+      </button>
+      <button
+        id="sortBtn"
+        style="
+          padding: 10px;
+          margin: 5px;
+          border-radius: 10px;
+          background-color: orange;
+        "
+      >
+        Sort Elements
+      </button>
+    </div>
+    <!-- //Array Element with Delete Element button -->
+    <div id="arrayDisplay" style="margin-top: 20px; font-size: x-large"></div>
+  </body>
+  <script>
+    let arr = [12, 13];
+
+    document.getElementById("addBtn").addEventListener("click", () => {
+      let element = prompt("Enter element to add:");
+      if (element !== null) {
+        arr.push(element);
+        // alert(`${element} added to array.`);
+        Toastify({
+          text: `${element} added to array.`,
+
+          duration: 2000,
+        }).showToast();
+      }
+      viewArray();
+    });
+
+    document.getElementById("removeBtn").addEventListener("click", () => {
+      let element = prompt("Enter element to remove:");
+      let index = arr.indexOf(element);
+      if (index !== -1) {
+        arr.splice(index, 1);
+        // alert(`${element} removed from array.`);
+        Toastify({
+          text: `${element} removed from array.`,
+
+          duration: 2000,
+        }).showToast();
+      } else {
+        // alert(`${element} not found in array.`);
+        Toastify({
+          text: `${element} not found in array.`,
+
+          duration: 2000,
+        }).showToast();
+      }
+      viewArray();
+    });
+
+    document.getElementById("updateBtn").addEventListener("click", () => {
+      let oldElement = prompt("Enter element to update:");
+      let index = arr.indexOf(oldElement);
+      if (index !== -1) {
+        let newElement = prompt("Enter new value:");
+        arr[index] = newElement;
+        // alert(`${oldElement} updated to ${newElement}.`);
+        Toastify({
+          text: `${oldElement} updated to ${newElement}.`,
+
+          duration: 2000,
+        }).showToast();
+      } else {
+        // alert(`${oldElement} not found in array.`);
+        Toastify({
+          text: `${oldElement} not found in array.`,
+
+          duration: 2000,
+        }).showToast();
+      }
+      viewArray();
+    });
+    document.getElementById("sortBtn").addEventListener("click", () => {
+      arr.sort();
+      //   alert("Array sorted.");
+        Toastify({
+            text: `Array sorted.`,
+    
+            duration: 2000,
+        }).showToast();
+      viewArray();
+    });
+
+    function viewArray() {
+      if (arr.length === 0) {
+        document.getElementById("arrayDisplay").innerText =
+          "Array is empty. Click Add Element to add items.";
+        return;
+      }
+      let displayHTML = "<ul type='square'>";
+      arr.forEach((item, index) => {
+        displayHTML += `<li style="margin-top:10px;">${item} <button onclick="removeElement(${index})" style="margin-left:10px;padding:10px;border-radius: 10px;
+          background-color: red;
+          color: aliceblue;">Delete</button></li>`;
+      });
+      displayHTML += "</ul>";
+      document.getElementById("arrayDisplay").innerHTML = displayHTML;
+    }
+    function removeElement(index) {
+      let removed = arr.splice(index, 1);
+    //   alert(`${removed} removed from array.`);
+        Toastify({
+            text: `${removed} removed from array.`,
+    
+            duration: 2000,
+        }).showToast();
+      viewArray();
+    }
+    viewArray();
+  </script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+</html>

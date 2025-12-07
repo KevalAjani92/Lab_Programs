@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+        background-image: radial-gradient(
+          circle,
+          #d16ba5,
+          #c777b9,
+          #ba83ca,
+          #aa8fd8,
+          #9a9ae1,
+          #8aa7ec,
+          #79b3f4,
+          #69bff8,
+          #52cffe,
+          #41dfff,
+          #46eefa,
+          #5ffbf1
+        );
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: x-large;
+        color: snow;
+        flex-direction: column;
+      }
+    </style>
+</head>
+<body>
+    <label for=""><input type="checkbox" class="check" name="" id="101" value="101">Roll No:101</label>
+    <label for=""><input type="checkbox" class="check" name="" id="102" value="102">Roll No:102</label>
+    <label for=""><input type="checkbox" class="check" name="" id="103" value="103">Roll No:103</label>
+    <label for=""><input type="checkbox" class="check" name="" id="104" value="104">Roll No:104</label>
+
+    <p id="txt"></p>
+</body>
+<script>
+    let checkboxes = document.getElementsByClassName('check');
+    Array.from(checkboxes).forEach((box)=>{
+        box.addEventListener('change',updateText);
+    });
+
+    function updateText(){
+        selected = [];
+        let boxes = document.getElementsByClassName('check');
+        Array.from(boxes).forEach(box => {
+            if(box.checked){
+                selected.push(box.value)
+            }
+        });
+        let txt = document.getElementById('txt');
+        txt.textContent = "Selected Roll Numbers: " + selected.join(", ");
+        
+    }
+    
+</script>
+</html>

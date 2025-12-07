@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Event</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    "
+  >
+    <div id="demo" style="height: 200px; width: 200px; border: 2px solid black">
+      <p>Mouse Click On This Div.</p>
+    </div>
+    <p id="txt"></p>
+  </body>
+  <script>
+    document.getElementById('demo').addEventListener('mouseup',(event)=>{
+        document.getElementById('txt').innerText = "mouseup";
+        // console.log(event);
+    })
+    document.getElementById('demo').addEventListener('mousedown',(event)=>{
+        document.getElementById('txt').innerText = "mousedown";
+        // console.log(event);
+    })
+  </script>
+</html>

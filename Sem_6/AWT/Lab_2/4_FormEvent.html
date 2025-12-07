@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Event</title>
+    <style>
+      input {
+        width: 200px;
+        height: 25px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Demonstration of Form Event</h1>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required />
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+
+    <p id="txt" style="font-size: xx-large;color: red;"></p>
+  </body>
+  <script>
+    document.getElementById('username').addEventListener('focus',()=>{
+        document.getElementById('txt').innerText = `username field is focused.`
+    })
+    document.getElementById('password').addEventListener('focus',()=>{
+        document.getElementById('txt').innerText = `password field is focused.`
+    })
+    document.getElementById('username').addEventListener('blur',()=>{
+        document.getElementById('txt').innerText = `username field is blured.`
+    })
+    document.getElementById('password').addEventListener('blur',()=>{
+        document.getElementById('txt').innerText = `password field is blured.`
+    })
+  </script>
+</html>

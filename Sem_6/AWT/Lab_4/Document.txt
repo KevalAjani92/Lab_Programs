@@ -1,0 +1,16 @@
+Detailed note on project structure of a NextJS application.
+
+In Root Directory There are many folders like .next,app,node_modules,public,...
+
+folders
+1).next => The .next folder in a Next.js project is an automatically generated directory that plays a crucial role in the build and runtime processes of your application.
+
+2)node_modules => The node_modules folder in a Next.js project, like any Node.js project, serves as a repository for all the external packages and their dependencies that your application requires to function.
+
+3)public => Its primary purpose is to serve static assets directly to the client without any processing by Next.js or Webpack.
+
+4)app => The app folder in a Next.js project, introduced with Next.js 13 and the App Router, serves as the primary location for building and organizing your application's routes, layouts, and pages. It provides a structured approach to development and offers various features for creating dynamic and interactive web applications.
+
+	Layouts: You can define layouts within the app folder (e.g., 		layout.tsx) to create shared UI structures that persist across 		multiple pages or route groups.
+
+	Pages: Individual pages are created by placing page.tsx files within 		route segments (folders) inside the app directory. For 		example, app/dashboard/page.tsx would render the dashboard 		page.

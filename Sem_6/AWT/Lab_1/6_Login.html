@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .login-container {
+        border: 2px solid black;
+        width: 50%;
+        background-image: radial-gradient(
+          circle,
+          #d16ba5,
+          #c777b9,
+          #ba83ca,
+          #aa8fd8,
+          #9a9ae1,
+          #8aa7ec,
+          #79b3f4,
+          #69bff8,
+          #52cffe,
+          #41dfff,
+          #46eefa,
+          #5ffbf1
+        );
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      input {
+        width: 200px;
+        height: 25px;
+        border-radius: 5px;
+      }
+      button {
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: lightgreen;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1 style="text-align: center">Login Page</h1>
+      <form
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          padding-bottom: 20px;
+        "
+        id="loginForm"
+        onsubmit="formSubmit"
+      >
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="6_Login.js"></script>
+</html>

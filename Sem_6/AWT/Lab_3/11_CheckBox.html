@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: radial-gradient(
+          circle,
+          #d16ba5,
+          #c777b9,
+          #ba83ca,
+          #aa8fd8,
+          #9a9ae1,
+          #8aa7ec,
+          #79b3f4,
+          #69bff8,
+          #52cffe,
+          #41dfff,
+          #46eefa,
+          #5ffbf1
+        );
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: x-large;
+        color: snow
+        ;
+      }
+    </style>
+  </head>
+  <body>
+
+
+  </body>
+  <script>
+    const rolls = [101, 102, 103, 104, 105];
+    const container = document.createElement("div");
+
+    rolls.forEach((roll) => {
+      const label = document.createElement("label");
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.value = roll;
+      checkbox.addEventListener("change", updateSelectedRolls);
+      label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(` Roll No: ${roll} `));
+      container.appendChild(label);
+      container.appendChild(document.createElement("br"));
+    });
+
+    const result = document.createElement("p");
+    result.id = "selectedRolls";
+    container.appendChild(result);
+
+    document.body.appendChild(container);
+
+    function updateSelectedRolls() {
+      const selected = [];
+      const checkboxes = container.querySelectorAll("input[type='checkbox']");
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          selected.push(checkbox.value);
+        }
+      });
+      result.textContent = "Selected Roll Numbers: " + selected.join(", ");
+    }
+  </script>
+</html>

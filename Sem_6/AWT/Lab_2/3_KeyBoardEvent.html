@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Event</title>
+</head>
+<body>
+    <p id="txt" style="text-align: center;font-size: xx-large;color: chartreuse;"></p>
+</body>
+<script>
+    document.body.addEventListener('keydown',(event)=>{
+        document.getElementById('txt').innerText = `${event.key} is pressed`;
+        
+    })
+</script>
+</html>
